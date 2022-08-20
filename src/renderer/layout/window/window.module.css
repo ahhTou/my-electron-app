@@ -6,10 +6,13 @@
 
 .titleBar {
     -webkit-app-region: drag;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;;
+    z-index: 10px;
 
-    height: 42px;
     transition: all 0.3s;
-    border-bottom: 1px solid transparent;
     background: #282c34;
 }
 

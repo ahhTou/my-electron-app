@@ -13,18 +13,20 @@
       "strict": true,
       "forceConsistentCasingInFileNames": true,
       "noFallthroughCasesInSwitch": true,
-      "module": "esnext",
+      "module": "commonjs",
       "moduleResolution": "node",
       "resolveJsonModule": true,
       "noEmit": false,
       "jsx": "react-jsx",
       "baseUrl": ".",
       "paths": {
-        "@r/*": ["./src/renderer/*"],
-        "@m/*": ["./src/main/*"],
+        "@renderer/*": ["./src/renderer/*"],
+        "@main/*": ["./src/main/*"],
+        "@common/*": ["./src/common/*"],
+        "@constant/*": ["./src/constant/*"]
       },
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.css"],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.css", "src/main/preload.ts"],
     "exclude": ["node_modules", "dist"]
   }
   

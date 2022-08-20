@@ -15,8 +15,10 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.css', '.ts', '.tsx'],
         alias: {
-            '@r': resolveDir('../src/renderer'),
-            '@m': resolveDir('../src/main'),
+            '@renderer': resolveDir('../src/renderer'),
+            '@main': resolveDir('../src/main'),
+            '@common': resolveDir('../src/common'),
+            '@constant': resolveDir('../src/constant'),
         },
     },
     module: {
@@ -62,5 +64,5 @@ module.exports = {
         },
     },
     mode: 'development',
-    target: 'electron-renderer',
+    target: ['web', 'electron-renderer'],
 }

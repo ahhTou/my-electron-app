@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { EntryElement } from "@r/pages/login"
+import { EntryElement } from "@renderer/pages/login"
 
 const app = document.getElementById('app')
 
