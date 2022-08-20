@@ -1,5 +1,5 @@
-import '@/assets/css/global.css'
-import Login from '@/pages/login'
+import '@r/assets/css/global.css'
+import Login from '@r/pages/login'
 
 import styles from "./app.module.css"
 

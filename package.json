@@ -1,7 +1,7 @@
 {
   "name": "my-electron-app",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "./src/main/index.ts",
   "license": "MIT",
   "prettier": {
     "singleQuote": true,
@@ -27,7 +27,8 @@
     "react-dom": "^18.1.0"
   },
   "scripts": {
-    "start": "electron .",
-    "dev:renderer": "webpack serve --config ./scripts/webpack.config.renderer.js"
+    "start": "nodemon --watch ./src/main/* --exec npm run dev:main",
+    "dev:main": "electron .",
+    "dev:renderer": "webpack serve --config ./scripts/webpack.config.renderer.dev.js"
   }
 }

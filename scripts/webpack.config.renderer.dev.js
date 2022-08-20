@@ -1,18 +1,22 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const resolve = (dir) => path.resolve(__dirname, dir)
+const resolveDir = (dir) => path.resolve(__dirname, dir)
 
 module.exports = {
-    entry: path.resolve(__dirname, '../src/renderer/main.ts'),
+    entry: {
+        index: resolveDir('../src/renderer/main.ts'),
+        login: resolveDir('../src/renderer/entries/login.ts'),
+    },
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: 'renderer.js',
+        path: resolveDir('../dist'),
+        filename: '[name].bundle.js',
     },
     resolve: {
         extensions: ['.js', '.json', '.css', '.ts', '.tsx'],
         alias: {
-            '@': path.resolve(__dirname, '../src/renderer'),
+            '@r': resolveDir('../src/renderer'),
+            '@m': resolveDir('../src/main'),
         },
     },
     module: {
@@ -35,7 +39,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.resolve(__dirname, '../public/index.html'),
+            chunks: ['index'],
+            template: resolveDir('../public/index.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'login.html',
+            chunks: ['login'],
+            template: resolveDir('../public/index.html'),
         }),
         new webpack.DefinePlugin({
             NODE_ENV: `"${process.env.NODE_ENV}"`,
@@ -43,7 +53,6 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
-        open: true, // 自动打开浏览器
         port: 9008, // 运行端口
         compress: true,
         hot: true,
@@ -53,5 +62,5 @@ module.exports = {
         },
     },
     mode: 'development',
-    target: 'web',
+    target: 'electron-renderer',
 }
