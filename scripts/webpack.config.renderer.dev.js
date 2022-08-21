@@ -7,6 +7,7 @@ module.exports = {
     entry: {
         index: resolveDir('../src/renderer/main.ts'),
         login: resolveDir('../src/renderer/entries/login.ts'),
+        webLogin: resolveDir('../src/renderer/entries/web-login.tsx'),
     },
     output: {
         path: resolveDir('../dist'),
@@ -47,6 +48,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'login.html',
             chunks: ['login'],
+            template: resolveDir('../public/index.html'),
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'web-login.html',
+            chunks: ['webLogin'],
             template: resolveDir('../public/index.html'),
         }),
         new webpack.DefinePlugin({

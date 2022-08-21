@@ -1,5 +1,6 @@
 import '@renderer/assets/css/global.css'
 import styles from './window.module.css'
+import 'antd/dist/antd.css';
 
 interface WindowLayoutProps {
     children?: any

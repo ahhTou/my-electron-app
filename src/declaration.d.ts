@@ -1,5 +1,5 @@
 declare interface URLModule {
-    openUrl: () => void
+    openUrl: (url: string) => void
 }
 
 declare interface LoginModule {

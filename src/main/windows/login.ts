@@ -1,4 +1,5 @@
-import { BrowserWindow } from 'electron'
+import EVENT_NAMES from '@constant/event-names'
+import { BrowserWindow, ipcMain, shell } from 'electron'
 import path from 'path'
 
 const createLoginWindow = () => {
@@ -17,6 +18,11 @@ const createLoginWindow = () => {
         },
     })
     win.loadURL('http://localhost:9008/login.html')
+
+    ipcMain.on(EVENT_NAMES.OPEN_URL, (event, url: string) => {
+        console.log('>>>> url: ', url)
+        shell.openExternal(url)
+    })
 }
 
 export default {
