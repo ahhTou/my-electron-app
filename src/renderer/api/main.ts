@@ -1,3 +1,5 @@
+
+
 const LoginMainAPI: LoginModule = {
     receive: () => {
         return '123'
@@ -10,7 +12,4 @@ const URLMainAPI: URLModule = {
     },
 }
 
-export {
-    URLMainAPI,
-    LoginMainAPI
-}
+export { URLMainAPI, LoginMainAPI }

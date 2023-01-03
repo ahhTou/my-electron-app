@@ -1,7 +1,7 @@
 .wrapper {
     position: relative;
     height: 100vh;
-    background: #282c34;
+    background: rgba(10, 10, 10, 0.1);
 }
 
 .titleBar {
@@ -13,9 +13,9 @@
     z-index: 10px;
 
     transition: all 0.3s;
-    background: #282c34;
+    /* background: #282c34; */
 }
 
 .titleBar:hover {
-    background: #21252b;
+    /* background: #21252b; */
 }

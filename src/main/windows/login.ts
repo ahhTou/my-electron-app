@@ -7,8 +7,11 @@ const createLoginWindow = () => {
         width: 312,
         height: 452,
         titleBarStyle: 'hidden',
-        backgroundColor: '#282c34',
-        resizable: false,
+        // backgroundColor: '#282c34',
+        // resizable: false,
+        transparent: true,
+        vibrancy: 'sidebar',
+        visualEffectState: "active",
         trafficLightPosition: { x: 14, y: 14 },
         fullscreenable: false, // 禁止全屏
         maximizable: false, // 禁止最大化
